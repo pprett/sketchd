@@ -1,0 +1,17 @@
+======
+Sketch
+======
+
+Twisted server for sketching data streams.
+
+
+Roadmap
+=======
+
+  * Heavy Hitters
+
+    - Space-saving algorithm by [1]_ .
+
+  * Unique users
+
+  * Count-Min sketch
