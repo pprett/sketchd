@@ -5,6 +5,22 @@ Sketch
 Twisted server for sketching data streams.
 
 
+API
+===
+
+Sketch provides a simple and convenient API similar to StatsD and
+Graphite to update or create new sketches.
+
+
+  key:value|type|params
+
+For example to record top-20 heavy hitters using the key ``query``::
+
+  query:"Apple iPad"|hh|20
+
+
+
+
 Roadmap
 =======
 
