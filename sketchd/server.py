@@ -5,8 +5,6 @@ from twisted.application.internet import UDPServer
 from twisted.application.service import MultiService
 from twisted.python import log
 
-import txredisapi
-
 from sketch.protocol import SketchUDPServerProtocol
 from sketch.protocol import MessageProcessor
 from sketch.algorithm.heavyhitters import SpaceSaving
@@ -46,11 +44,8 @@ class SketchFactory(object):
         return self.table[key]
 
 
-
-rd = txredisapi.lazyConnectionPool()
-
 dispatcher = Dispatcher()
-dispatcher.register("hh", SketchFactory(SpaceSaving, rd))
+dispatcher.register("hh", SketchFactory(SpaceSaving))
 
 
 sketch_udp_protocol = SketchUDPServerProtocol(MessageProcessor(dispatcher))
